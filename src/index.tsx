@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import 'normalize.css';
-import Menu from './pages/Menu';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import 'normalize.css'
+import Router from './Routes/routes'
+
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <Menu/>
+        <Router/>
     </React.StrictMode>,
     document.getElementById('root')
-);
+)
