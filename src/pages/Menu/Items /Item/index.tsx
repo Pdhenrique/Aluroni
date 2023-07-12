@@ -1,13 +1,13 @@
 
-import styles from './Item.module.scss';
-import menu from '../Items.json';
-import classNames from 'classnames';
+import styles from './Item.module.scss'
+import menu from 'data/Menu.json'
+import classNames from 'classnames'
 
 type Props = typeof menu[0]
 
 export default function Item(props: Props) {
     
-    const {title, description, category, price, size, serving, photo } = props;
+    const {title, description, category, price, size, serving, photo } = props
 
     return (
         <div className={styles.item}>
@@ -37,5 +37,5 @@ export default function Item(props: Props) {
                 </div>
             </div>
         </div>
-    );
+    )
 }

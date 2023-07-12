@@ -1,7 +1,7 @@
 
-import styles from './Filter.module.scss';
-import filters from './Filter.json';
-import classNames from 'classnames';
+import styles from './Filter.module.scss'
+import filters from './Filter.json'
+import classNames from 'classnames'
 
 type IOption = typeof filters[0]
 
@@ -13,8 +13,8 @@ interface Props {
 export default function Filter({filter, setFilter}: Props) {
     
     function selectFilter(option: IOption){
-        if(filter === option.id) return setFilter(null);
-        return setFilter(option.id);
+        if(filter === option.id) return setFilter(null)
+        return setFilter(option.id)
     }
 
     return( 
@@ -30,5 +30,5 @@ export default function Filter({filter, setFilter}: Props) {
                     {option.label}
                 </button>
             ))}
-        </div>);
+        </div>)
 }

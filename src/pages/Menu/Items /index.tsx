@@ -1,8 +1,8 @@
 
-import styles from './Items.module.scss';
-import menuItems from './Items.json';
-import Item from './Item';
-import { useEffect, useState } from 'react';
+import styles from './Items.module.scss'
+import menuItems from 'data/Menu.json'
+import Item from './Item'
+import { useEffect, useState } from 'react'
 
 interface Props {
     search: string;
@@ -12,39 +12,39 @@ interface Props {
 
 export default function Items(props: Props) {
 
-    const [list, setList] = useState(menuItems);
-    const { search, filter, computer } = props;
+    const [list, setList] = useState(menuItems)
+    const { search, filter, computer } = props
 
 
     function searchTest(title: string) {
 
-        const regex = new RegExp(search, 'i');
-        return regex.test(title);
+        const regex = new RegExp(search, 'i')
+        return regex.test(title)
     }
 
     function filterTest(id: number) {
-        if (filter !== null) return filter === id;
+        if (filter !== null) return filter === id
 
-        return true;
+        return true
     }
 
     function order(newList: typeof menuItems){
         switch(computer){
         case 'porcao':
-            return newList.sort((a, b) => a.size > b.size ? 1 : -1);
+            return newList.sort((a, b) => a.size > b.size ? 1 : -1)
         case 'qts_pessoas':
-            return newList.sort((a, b) => a.serving > b.serving ? 1 : -1);
+            return newList.sort((a, b) => a.serving > b.serving ? 1 : -1)
         case 'preco':
-            return newList.sort((a, b) => a.price > b.price ? 1 : -1 );
+            return newList.sort((a, b) => a.price > b.price ? 1 : -1 )
         default:
-            return newList;
+            return newList
         }
     }
 
     useEffect(() => {
-        const newList = menuItems.filter(item => searchTest(item.title) && filterTest(item.category.id));
-        setList(order(newList));
-    }, [search, filter, computer]);
+        const newList = menuItems.filter(item => searchTest(item.title) && filterTest(item.category.id))
+        setList(order(newList))
+    }, [search, filter, computer])
 
     return (
         <div className={styles.items}>
@@ -55,5 +55,5 @@ export default function Items(props: Props) {
                 />
             ))}
         </div>
-    );
+    )
 }

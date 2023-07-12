@@ -1,10 +1,10 @@
 
-import { useState } from 'react';
-import styles from './Computer.module.scss';
-import options from './options.json';
-import classNames from 'classnames';
+import { useState } from 'react'
+import styles from './Computer.module.scss'
+import options from './options.json'
+import classNames from 'classnames'
 
-import {MdKeyboardArrowUp, MdKeyboardArrowDown} from 'react-icons/md';
+import {MdKeyboardArrowUp, MdKeyboardArrowDown} from 'react-icons/md'
 
 interface Props {
     computer: string,
@@ -13,9 +13,9 @@ interface Props {
 
 export default function Computer({computer, setComputer}: Props) {
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false)
 
-    const computerName = computer && options.find(option => option.value === computer)?.name;
+    const computerName = computer && options.find(option => option.value === computer)?.name
 
     return(
         <button 
@@ -48,5 +48,5 @@ export default function Computer({computer, setComputer}: Props) {
             </div>
         </button>
     
-    );
+    )
 }

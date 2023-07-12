@@ -1,6 +1,6 @@
 
-import styles from './SearchEngine.module.scss';
-import { CgSearch } from 'react-icons/cg';
+import styles from './SearchEngine.module.scss'
+import { CgSearch } from 'react-icons/cg'
 interface Props{
     search: string
     setSearch: React.Dispatch<React.SetStateAction<string>>
@@ -19,5 +19,5 @@ export default function SearchEngine({search, setSearch}: Props){
                 color="#4C4D5E"
             />
         </div>
-    );
+    )
 }
