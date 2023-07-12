@@ -1,16 +1,17 @@
-import styles from './Menu.module.scss'
-import { ReactComponent as Logo } from "assets/logo.svg"
-import SearchEngine from './SearchEngine'
-import { useState } from 'react'
-import Filter from './Filter'
-import Computer from './computer'
-import Items from './Items '
+
+import styles from './Menu.module.scss';
+import { ReactComponent as Logo } from 'assets/logo.svg';
+import SearchEngine from './SearchEngine';
+import { useState } from 'react';
+import Filter from './Filter';
+import Computer from './computer';
+import Items from './Items ';
 
 export default function Menu() {
 
-    const [search, setSearch] = useState("")
-    const [filter, setFilter] = useState<number | null>(null)
-    const [computer, setComputer] = useState("")
+    const [search, setSearch] = useState('');
+    const [filter, setFilter] = useState<number | null>(null);
+    const [computer, setComputer] = useState('');
 
     return (
         <main>
@@ -33,5 +34,5 @@ export default function Menu() {
             </section>
         </main>
 
-    )
+    );
 }

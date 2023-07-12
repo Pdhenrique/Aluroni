@@ -1,16 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import 'normalize-css'
+import 'normalize.css';
 import Menu from './pages/Menu';
 
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+ReactDOM.render(
+    <React.StrictMode>
+        <Menu/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
-root.render(
-  <React.StrictMode>
-    <Menu/>
-  </React.StrictMode>
-);
-
