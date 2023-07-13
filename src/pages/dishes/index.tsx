@@ -1,7 +1,7 @@
-import classNames from 'classnames'
 import styles from './dishes.module.scss'
 import { useNavigate, useParams } from 'react-router-dom'
 import menu from 'data/Menu.json'
+import DishesTags from 'components/DishesTags'
 
 export default function Dishes(){
  
@@ -31,21 +31,7 @@ export default function Dishes(){
                     <p className={styles.content__description}>
                         {dishes.description}
                     </p>
-                    <div className={styles.tags}>
-                        <div className={classNames({
-                            [styles.text__type]: true,                        })}>
-                            [styles[`tags__type__${dishes.category.label.toLowerCase()}`]]: true
-                        </div>
-                        <div className={styles.tas__portion}>
-                            {dishes.size}g
-                        </div>
-                        <div className={styles.tags__amtPeople}>
-                            {dishes.serving} people{dishes.serving === 1 ? '' : 's'}
-                        </div>
-                        <div className={styles.value}>
-                            R$ {dishes.price.toFixed(2)}
-                        </div>
-                    </div>
+                    <DishesTags {...dishes}/>
                 </div>
             </section>
         </>

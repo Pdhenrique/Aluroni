@@ -1,12 +1,13 @@
 
+import DishesTags from 'components/DishesTags'
 import styles from './Item.module.scss'
-import classNames from 'classnames'
+
 import { dishesProps } from 'types/Dishe'
 
 
 export default function Item(props: dishesProps) {
 
-    const { title, description, category, price, size, serving, photo } = props
+    const { title, description, photo } = props
 
     return (
         <div className={styles.item}>
@@ -14,26 +15,11 @@ export default function Item(props: dishesProps) {
                 <img src={photo} alt={title} />
             </div>
             <div className={styles.item__description}>
-                <h2>{title}</h2>
-                <p> {description}</p>
-
-                <div className={styles.item__tags}>
-                    <div className={classNames({
-                        [styles.item__type]: true,
-                        [styles[`item__type__${category.label.toLowerCase()}`]]: true
-                    })}>
-                        {category.label}
-                    </div>
-                    <div className={styles.item__portion}>
-                        {size}
-                    </div>
-                    <div className={styles.item__amtPeople}>
-                        {serving} pessoa{serving === 1 ? '' : 's'}
-                    </div>
-                    <div className={styles.item__value}>
-                        {price.toFixed(2)}
-                    </div>
+                <div className={styles.item__title}>
+                    <h2>{title}</h2>
+                    <p> {description}</p>      
                 </div>
+                <DishesTags {...props}/>
             </div>
         </div>
     )
