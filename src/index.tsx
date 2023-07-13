@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import 'normalize.css'
-import Router from './Routes/routes'
+import Router from './routes'
 
 
 
