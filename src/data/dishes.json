@@ -1,0 +1,30 @@
+[
+  {
+  "dish": "Dish 1",
+  "route": "/dishes/1"
+  },
+  {
+  "dish": "Dish 2",
+  "route": "/dishes/2"
+  },
+  {
+  "dish": "Dish 3",
+  "route": "/dishes/3"
+  },
+  {
+  "dish": "Dish 4",
+  "route": "/dishes/4"
+  },
+  {
+  "dish": "Dish 5",
+  "route": "/dishes/5"
+  },
+  {
+  "dish": "Dish 6",
+  "route": "/dishes/6"
+  },
+  {
+  "dish": "Dish 7",
+  "route": "/dishes/7"
+  }
+  ]
