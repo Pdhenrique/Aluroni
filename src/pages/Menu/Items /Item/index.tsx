@@ -1,13 +1,12 @@
 
 import styles from './Item.module.scss'
-import menu from 'data/Menu.json'
 import classNames from 'classnames'
+import { dishesProps } from 'types/Dishe'
 
-type Props = typeof menu[0]
 
-export default function Item(props: Props) {
-    
-    const {title, description, category, price, size, serving, photo } = props
+export default function Item(props: dishesProps) {
+
+    const { title, description, category, price, size, serving, photo } = props
 
     return (
         <div className={styles.item}>
@@ -29,7 +28,7 @@ export default function Item(props: Props) {
                         {size}
                     </div>
                     <div className={styles.item__amtPeople}>
-                        {serving} pessoa{serving === 1 ? '' : 's' }
+                        {serving} pessoa{serving === 1 ? '' : 's'}
                     </div>
                     <div className={styles.item__value}>
                         {price.toFixed(2)}

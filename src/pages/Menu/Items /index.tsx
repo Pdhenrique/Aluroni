@@ -4,6 +4,8 @@ import menuItems from 'data/Menu.json'
 import Item from './Item'
 import { useEffect, useState } from 'react'
 
+import {MenuProps} from 'types/Dishe'
+
 interface Props {
     search: string;
     filter: number | null;
@@ -28,7 +30,7 @@ export default function Items(props: Props) {
         return true
     }
 
-    function order(newList: typeof menuItems){
+    function order(newList: MenuProps){
         switch(computer){
         case 'porcao':
             return newList.sort((a, b) => a.size > b.size ? 1 : -1)
