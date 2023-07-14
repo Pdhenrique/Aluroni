@@ -1,3 +1,4 @@
+
 import styles from './SearchEngine.module.scss'
 import { CgSearch } from 'react-icons/cg'
 interface Props{
@@ -7,16 +8,16 @@ interface Props{
 
 export default function SearchEngine({search, setSearch}: Props){
     return (
-    <div className={styles.searchEngine}>
-        <input 
-        value={search}
-        onChange={(event) => setSearch(event.target.value)}
-        placeholder='Buscar'
-        />
-        <CgSearch
-        size={20}
-        color="#4C4D5E"
-        />
-    </div>
+        <div className={styles.searchEngine}>
+            <input 
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder='Buscar'
+            />
+            <CgSearch
+                size={20}
+                color="#4C4D5E"
+            />
+        </div>
     )
 }

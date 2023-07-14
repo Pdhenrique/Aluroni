@@ -1,7 +1,10 @@
+
 import styles from './Items.module.scss'
-import menuItems from './Items.json'
+import menuItems from 'data/Menu.json'
 import Item from './Item'
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
+
+import {MenuProps} from 'types/Dishe'
 
 interface Props {
     search: string;
@@ -17,7 +20,7 @@ export default function Items(props: Props) {
 
     function searchTest(title: string) {
 
-        const regex = new RegExp(search, 'i');
+        const regex = new RegExp(search, 'i')
         return regex.test(title)
     }
 
@@ -27,16 +30,16 @@ export default function Items(props: Props) {
         return true
     }
 
-    function order(newList: typeof menuItems){
+    function order(newList: MenuProps){
         switch(computer){
-            case 'porcao':
-                return newList.sort((a, b) => a.size > b.size ? 1 : -1)
-            case 'qts_pessoas':
-                return newList.sort((a, b) => a.serving > b.serving ? 1 : -1)
-            case 'preco':
-                return newList.sort((a, b) => a.price > b.price ? 1 : -1 )
-            default:
-                return newList
+        case 'porcao':
+            return newList.sort((a, b) => a.size > b.size ? 1 : -1)
+        case 'qts_pessoas':
+            return newList.sort((a, b) => a.serving > b.serving ? 1 : -1)
+        case 'preco':
+            return newList.sort((a, b) => a.price > b.price ? 1 : -1 )
+        default:
+            return newList
         }
     }
 
