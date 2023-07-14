@@ -5,7 +5,7 @@ import stylesTheme from 'styles/theme.module.scss'
 
 
 
-export default function DefaultPage(){
+export default function DefaultPage({children}: {children?: React.ReactNode}){
     return(
         <>       
             <header className={styles.header}>
@@ -15,6 +15,7 @@ export default function DefaultPage(){
             </header>
             <div className={stylesTheme.container}>
                 <Outlet/>
+                {children}
             </div>
         </>
 
