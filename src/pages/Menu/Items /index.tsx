@@ -2,20 +2,21 @@
 import styles from './Items.module.scss'
 import menuItems from 'data/Menu.json'
 import Item from './Item'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 
 import {MenuProps} from 'types/Dishe'
 
 interface Props {
     search: string;
     filter: number | null;
-    computer: string
+    computer: string;
 }
 
-export default function Items(props: Props) {
+function Items(props: Props) {
 
     const [list, setList] = useState(menuItems)
     const { search, filter, computer } = props
+
 
 
     function searchTest(title: string) {
@@ -56,6 +57,8 @@ export default function Items(props: Props) {
                     {...item}
                 />
             ))}
-        </div>
+        </div> 
     )
 }
+
+export default memo(Items)
