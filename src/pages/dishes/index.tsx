@@ -2,6 +2,8 @@ import styles from './dishes.module.scss'
 import { useNavigate, useParams } from 'react-router-dom'
 import menu from 'data/Menu.json'
 import DishesTags from 'components/DishesTags'
+import NotFound from 'pages/notFound'
+import DefaultPage from 'components/DefaultPage'
 
 export default function Dishes(){
  
@@ -12,11 +14,11 @@ export default function Dishes(){
     const dishes = menu.find(item => item.id === Number(id))
 
     if(!dishes){
-        return ''
+        return <NotFound/>
     }
 
     return(
-        <>
+        <DefaultPage>
             <button className={styles.goBack} onClick={() => navigate(-1) }>
                 {'< Voltar'}
             </button>
@@ -34,6 +36,6 @@ export default function Dishes(){
                     <DishesTags {...dishes}/>
                 </div>
             </section>
-        </>
+        </DefaultPage>
     )
 }
