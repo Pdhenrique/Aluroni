@@ -2,6 +2,7 @@
 import styles from './Filter.module.scss'
 import filters from './Filter.json'
 import classNames from 'classnames'
+import { memo } from 'react'
 
 type IOption = typeof filters[0]
 
@@ -10,7 +11,7 @@ interface Props {
     setFilter: React.Dispatch<React.SetStateAction<number | null>>
 }
 
-export default function Filter({filter, setFilter}: Props) {
+function Filter({filter, setFilter}: Props) {
     
     function selectFilter(option: IOption){
         if(filter === option.id) return setFilter(null)
@@ -32,3 +33,5 @@ export default function Filter({filter, setFilter}: Props) {
             ))}
         </div>)
 }
+
+export default memo(Filter)

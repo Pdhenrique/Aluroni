@@ -4,15 +4,15 @@
       "value": ""
     },
     {
-      "name": "Porção",
-      "value": "porcao"
+      "name": "Portion",
+      "value": "portion"
     },
     {
-      "name": "Qtd. pessoas",
-      "value": "qtd_pessoas"
+      "name": "Amt, people",
+      "value": "amt_people"
     },
     {
-      "name": "Preço",
-      "value": "preco"
+      "name": "Value",
+      "value": "value"
     }
   ]

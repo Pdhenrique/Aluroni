@@ -1,4 +1,5 @@
 
+import { useMemo } from 'react'
 import styles from './SearchEngine.module.scss'
 import { CgSearch } from 'react-icons/cg'
 interface Props{
@@ -7,6 +8,11 @@ interface Props{
 }
 
 export default function SearchEngine({search, setSearch}: Props){
+ 
+    const memorizedSearchIcon = useMemo(() => {
+        return <CgSearch size={20} color="#4C4D5E"/>
+    }, [])
+
     return (
         <div className={styles.searchEngine}>
             <input 
@@ -14,10 +20,7 @@ export default function SearchEngine({search, setSearch}: Props){
                 onChange={(event) => setSearch(event.target.value)}
                 placeholder='Buscar'
             />
-            <CgSearch
-                size={20}
-                color="#4C4D5E"
-            />
+            {memorizedSearchIcon}
         </div>
     )
 }

@@ -4,12 +4,14 @@ import styles from './Item.module.scss'
 
 import { dishesProps } from 'types/Dishe'
 import { useNavigate } from 'react-router-dom'
+import { memo } from 'react'
 
 
-export default function Item(props: dishesProps) {
+function Item(props: dishesProps) {
 
     const {id, title, description, photo } = props
     const navigate = useNavigate()
+
 
     return (
         <div className={styles.item} onClick={() => navigate(`/dishes/${id}`)}>
@@ -26,3 +28,5 @@ export default function Item(props: dishesProps) {
         </div>
     )
 }
+
+export default memo(Item)

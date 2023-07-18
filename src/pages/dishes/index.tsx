@@ -1,9 +1,13 @@
 import styles from './dishes.module.scss'
 import { useNavigate, useParams } from 'react-router-dom'
 import menu from 'data/Menu.json'
-import DishesTags from 'components/DishesTags'
-import NotFound from 'pages/notFound'
-import DefaultPage from 'components/DefaultPage'
+import { lazy } from 'react'
+
+
+const DishesTags = lazy(() => import('components/DishesTags'))
+const DefaultPage = lazy(() => import('components/DefaultPage'))
+const NotFound = lazy(() => import('pages/notFound'))
+
 
 export default function Dishes(){
  
